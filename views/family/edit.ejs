@@ -1,0 +1,17 @@
+<%- include('../partials/header'); -%>
+
+
+<div class="container" style="margin-bottom:100px;">
+<form action="/gallery/<%=data._id%>?_method=PUT" method="POST" >
+<input style="width:400px; display:block;margin:auto; border-radius: 10px; margin-top:30px;" name="gallery[name]" type="text" value="<%=data.name%>">
+
+<textarea style="width:400px; margin:auto; display:block; height:100px; border-radius: 25px; margin-top:30px;" name="gallery[image]">
+<%=data.image%>
+</textarea>
+<textarea style="width:400px; display:block; margin:auto; height:200px; border-radius: 10px; margin-top:30px;" name="gallery[description]">
+<%=data.description%>
+</textarea>
+<button style="width:400px; display:block; margin:auto; background:#db03fc; border-radius: 10px; color:white; margin-top:30px;" >UPDATE</button>
+</form>
+</div>
+<%- include('../partials/footer'); -%>

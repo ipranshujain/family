@@ -1,0 +1,11 @@
+<%- include('../partials/header'); -%>
+<div class="row" style="margin-bottom:100px;">
+<% data.forEach(function(x){ %>
+	<span style="width:30%; margin:0px 1.66%; background:white; color:#f9021a; height:auto; float:left; border:white;">
+	<p> <img style="width:100%;"src="<%=x.image%>"> </p>
+	<p style="text-align:center; word-wrap: break-word; width:100%; font-size:2rem;"> <%=x.name%> </p>
+	<a href="/gallery/<%= x._id %>">MORE INFO..</a>
+	</span>
+<% }); %>
+</div>
+<%- include('../partials/footer'); -%>	

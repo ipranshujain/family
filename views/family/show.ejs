@@ -1,0 +1,44 @@
+<%- include('../partials/header'); -%>
+
+
+
+<div class="container" style="margin-bottom:100px;">
+<div class="row">
+<div class="col-md-3">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</div>
+<div class="col-md-9">
+
+<div style="width:400px; display:block;margin:auto; border-radius: 5px; margin-top:30px; background:white; color:black;"><%= data.name %></div>
+<img style="width:25%; margin:auto; display:block; height:auto; border-radius: 5px; margin-top:10px;" src="<%= data.image %>">
+<div style="width:400px; display:block; margin:auto; height:auto; border-radius: 5px; margin-top:30px; background:white; color:#414543; font-weight:100;">
+<%= data.description %>
+</div>
+<div style="text-align:center">
+<a href="/gallery/<%=data.id%>/edit" style="width:200px; margin:auto; display:inline-block; background:#00f770;
+text-align:center; border-radius: 25px; color:white; margin-top:30px; border:2px solid white;" >EDIT</a>
+<form action="/gallery/<%=data.id%>?_method=DELETE" method="POST"  style="width:200px; margin:auto; border-radius: 25px; display:inline-block; margin-top:30px;">
+
+<button style="width:200px; margin:auto; background:#d41929; border-radius: 25px; color:white;" >DELETE</button>
+
+</form>
+
+</div>
+<div style="margin-top:50px;">
+<% data.comments.forEach(function(comment){%>
+<div style="width:400px; display:block;margin:auto; border-radius: 5px; margin-top:30px; background:white; color:black;"><%=comment.author.username%> - <%= comment.text %></div>
+<%});%>
+<a href="/gallery/<%=data.id%>/comments/new">Enter More...</a>
+<div>
+</div>
+
+</div>
+</div>
+
+
+
+<%- include('../partials/footer'); -%>
+
+
